@@ -1,0 +1,1 @@
+title:STRING,name:STRING,english:STRING,chemical_formula:STRING,chemical_substances_no:STRING,cas_no:STRING,purpose:STRING,package:STRING,description:STRING,sds:STRING
