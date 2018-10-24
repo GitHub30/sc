@@ -24,6 +24,8 @@ def main():
             #        html.xpath('//article//h2|//article//td')]
             row = [td.text_content().replace('\n', '').replace('\r', '') for td in
                    html.xpath('//article//h2|//article//td')]
+            if product_url == 'https://www.stella-chemifa.co.jp/products/cat9/cat4/09.html':
+                del row[3:5]
             print(row)
             rows.append(row)
 
