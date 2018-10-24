@@ -20,7 +20,9 @@ def main():
         product_urls = html.xpath(f'//article//a[starts-with(@href, "{category_url}") and not(contains(@href,"#"))]/@href')
         for product_url in product_urls:
             html = parse(product_url)
-            row = [tostring(td, encoding="utf-8").strip()[4:-5].strip().decode('utf-8') for td in
+            # row = [tostring(td, encoding="utf-8").strip()[4:-5].strip().decode('utf-8') for td in
+            #        html.xpath('//article//h2|//article//td')]
+            row = [td.text_content().replace('\n', '').replace('\r', '') for td in
                    html.xpath('//article//h2|//article//td')]
             print(row)
             rows.append(row)
